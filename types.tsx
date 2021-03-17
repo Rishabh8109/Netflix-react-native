@@ -1,17 +1,26 @@
 export type RootStackParamList = {
   Root: undefined;
   NotFound: undefined;
+  splace : undefined;
 };
 
 export type BottomTabParamList = {
-  TabOne: undefined;
-  TabTwo: undefined;
+  Home: undefined;
+  Videos: undefined;
+  Search: undefined;
+  Downloads: undefined;
 };
 
-export type TabOneParamList = {
-  TabOneScreen: undefined;
+export type HomeParamList = {
+  HomeScreen: undefined;
+  MovieDetailsScreen : undefined;
 };
 
 export type TabTwoParamList = {
   TabTwoScreen: undefined;
 };
+
+
+export interface idProps {
+  id : Number
+}
