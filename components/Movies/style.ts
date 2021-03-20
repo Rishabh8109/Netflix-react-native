@@ -1,9 +1,8 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  wrapper: {},
   image: {
-    width: 150,
+    width: 140,
     height:200,
     borderRadius : 4
   },
@@ -13,6 +12,6 @@ export const styles = StyleSheet.create({
       fontSize: 15,
       fontWeight :'bold',
       fontFamily : 'sans-serif',
-      marginLeft: 10,
+      marginLeft: 12,
     },
 });

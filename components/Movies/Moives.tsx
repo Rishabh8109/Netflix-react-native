@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text , Image , SafeAreaView} from 'react-native';
 import {styles} from './style';
 import {useNavigation} from '@react-navigation/native'
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import { TouchableOpacity, TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 interface proptype {
   item : {
@@ -14,16 +14,16 @@ const Moives = (prop : proptype) => {
    const navigation = useNavigation();
 
   return (
-    <SafeAreaView style={styles.wrapper}>
-        <TouchableWithoutFeedback onPress={() => navigation.navigate('MovieDetailsScreen' , {items : prop})}>
+    <SafeAreaView >
+        <TouchableOpacity onPress={() => navigation.navigate('MovieDetailsScreen' , {items : prop})} activeOpacity={.8}>
           <Image
           source={{
             uri : `https://image.tmdb.org/t/p/w500${prop.item.poster_path}`
           }}
           style={styles.image}
-          resizeMode="contain"
+          resizeMode="cover"
           />
-        </TouchableWithoutFeedback>
+        </TouchableOpacity>
     </SafeAreaView>
   )
 }

@@ -81,8 +81,5 @@ export const styles = StyleSheet.create({
       top : "16%",
       left : "38%",
       color :'#fff',
-      shadowColor : '#fff',
-      shadowRadius :  10,
-      shadowOpacity : .8
     }
 })

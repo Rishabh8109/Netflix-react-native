@@ -1,8 +1,6 @@
 import * as React from 'react';
-import { StyleSheet ,StatusBar , FlatList,ScrollView ,} from 'react-native';
-import Moives from '../components/Movies/Moives';
-import { Text, View ,} from '../components/Themed';
 import useFetch from '../hooks/useFetch';
+import { ScrollView, Text, View , FlatList , StyleSheet} from 'react-native'
 
 import {
   POPULAR_MOVIE_API_URL,
@@ -10,6 +8,11 @@ import {
    NOW_PLAYING_MOVIE_API_URL,
    UPCOMING_MOVIE_API_URL
 } from '../constants/api_url';
+
+
+import Placeholder from '../components/Skeleton/Placeholder';
+import Moives from '../components/Movies/Moives';
+
 
 
 export default function TabOneScreen() {
@@ -21,49 +24,76 @@ export default function TabOneScreen() {
 
 
   return (
-     <ScrollView style={styles.container}>
+    <>
+      <ScrollView >
        <View>
         <Text style={styles.title}>Popular on Netflix</Text>
         <FlatList
-          data={popular_movies.results}
-          renderItem={({item}) => <Moives item={item} />}
-          keyExtractor={item => item.id}
+          data={popular_movies.data.results}
+          renderItem={({item}) => (
+            <>
+              <Placeholder loading={popular_movies.loading}>
+                 <Moives item={item}  />
+              </Placeholder>
+            </>
+          )}
+          keyExtractor={item => item.id.toString()}
           horizontal
           style={{marginLeft : 5}}
         />
         <Text style={styles.title}>Top Rated</Text>
         <FlatList
-          data={top_rated_movies.results}
-          renderItem={({item}) => <Moives item={item}/>}
-          keyExtractor={item => item.id}
+          data={top_rated_movies.data.results}
+          renderItem={({item}) => (
+            <>
+              <Placeholder loading={top_rated_movies.loading}>
+                 <Moives item={item} />
+              </Placeholder>
+            </>
+
+          )}
+          keyExtractor={item => item.id.toString()}
           horizontal
           style={{marginLeft : 5}}
         />
         <Text style={styles.title}>Now Playing</Text>
         <FlatList
-          data={now_playing_movies.results}
-          renderItem={({item}) => <Moives item={item}/>}
-          keyExtractor={item => item.id}
+          data={now_playing_movies.data.results}
+          renderItem={({item}) => (
+            <>
+              <Placeholder loading={now_playing_movies.loading}>
+                 <Moives item={item} />
+              </Placeholder>
+            </>
+          )}
+          keyExtractor={item => item.id.toString()}
           horizontal
           style={{marginLeft : 5}}
         />
         <Text style={styles.title}>Upcoming</Text>
         <FlatList
-          data={upcoming_movies.results}
-          renderItem={({item}) => <Moives item={item}/>}
-          keyExtractor={item => item.id}
+          data={upcoming_movies.data.results}
+          renderItem={({item}) => (
+            <>
+              <Placeholder loading={upcoming_movies.loading}>
+                 <Moives item={item} />
+              </Placeholder>
+            </>
+
+          )}
+          keyExtractor={item => item.id.toString()}
           horizontal
           style={{marginLeft : 5}}
         />
        </View>
      </ScrollView>
+    </>
   );
 }
 
+
 const styles = StyleSheet.create({
-  container : {
-    paddingVertical : 20
-  },
+
   title: {
     color: "#fff",
     paddingVertical: 15,

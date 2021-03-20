@@ -7,7 +7,7 @@ const SplaceScreen : React.FC = ({navigation} : any) => {
         navigation.navigate('Root');
     }, 2000)
     return () => clearInterval(interval);
-  }, [navigation]);
+  }, []);
   return (
     <View style={styles.container}>
       <Image

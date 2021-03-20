@@ -30,7 +30,7 @@ interface IRouteProp {
 
 const Index = (prop : IRouteProp) => {
   const route = useRoute();
-  const item = prop.route?.params.items?.item;
+  const item = prop.route?.params.items.item;
 
   return (
     <View style={styles.container}>

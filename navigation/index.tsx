@@ -31,7 +31,7 @@ function RootNavigator() {
     screenOptions={{
       headerShown: false,
       gestureEnabled : true,
-      ...TransitionPresets.SlideFromRightIOS
+      ...TransitionPresets.ScaleFromCenterAndroid
     }}
 
     >

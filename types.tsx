@@ -14,6 +14,7 @@ export type BottomTabParamList = {
 export type HomeParamList = {
   HomeScreen: undefined;
   MovieDetailsScreen : undefined;
+  TabScreen : undefined
 };
 
 export type TabTwoParamList = {
@@ -23,4 +24,10 @@ export type TabTwoParamList = {
 
 export interface idProps {
   id : Number
+}
+
+export type TopTabParamList = {
+  HomeScreen: undefined;
+  SearchScreen : undefined,
+
 }
